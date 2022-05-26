@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'caveman';
+    src: url('font/caveman_regular.ttf');
+}
+
+html {
+    margin: 0;
+    width: 100%;
+    background-color: #efe0c0;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+#content, .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content {
+    background-color: #785c2149;
+    z-index: 1;
+    width: 50vw;
+}
+
+.header > img {
+    width: 40vw;
+}
+
+.title {
+    font-size: 32px;
+    font-family: 'caveman';
+}
+
+.tabs {
+    display: flex;
+    gap: 2em;
+}
+
+.header button {
+    padding: 1em;
+    border: 0;
+    background-color: #785d2100;
+    transition: .4s;
+    position: relative;
+}
+
+.header button:not(.current):hover {
+    padding-top: 0em;
+    cursor: pointer;
+}
+
+.header button:not(.current)::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #785d21aa;
+    transform: scaleX(0);
+    transition: transform .4s ease;
+}
+
+.header button:not(.current):hover::before {
+    transform: scaleX(1);
+}
+
+.current::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #785d21aa;
+    transform: scaleX(1);
+}
+
+.current {
+    padding-top: 0;
+}
+
+img {
+    width: 200px;
+}
+
+.section, .section-title {
+    width: 70%;
+    margin: 30px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.section h2 {
+    align-self: flex-start;
+}
+
+iframe {
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+}
+
+.section div {
+    display: flex;
+}
+
+.section img {
+    align-self: flex-end;
+    width: 200px;
+    object-fit: fill;
+    margin-left: 20px;
+}
+
+h2, h1 {
+    font-family: 'caveman';
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+li {
+    margin: 0;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}

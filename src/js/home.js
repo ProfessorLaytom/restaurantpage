@@ -32,7 +32,7 @@ const makeHome = (content) => {
     const hourList = makeHours()
     makeDiv('Opening hours', hourList, content)
     
-    location.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45097.221731634985!2d1.135895572782933!3d45.05381809900293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ff5466b12efcbd%3A0x72d8dc5bd7213e6f!2sGrotte%20de%20Lascaux!5e0!3m2!1sen!2sfr!4v1653490379296!5m2!1sen!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> <p>Grotte de Lascaux, 24290 Montignac</p>';
+    location.innerHTML = '<p>Grotte de Lascaux, 24290 Montignac</p> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45097.221731634985!2d1.135895572782933!3d45.05381809900293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ff5466b12efcbd%3A0x72d8dc5bd7213e6f!2sGrotte%20de%20Lascaux!5e0!3m2!1sen!2sfr!4v1653490379296!5m2!1sen!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
 
     makeDiv('Where to find us', location, content)
 }

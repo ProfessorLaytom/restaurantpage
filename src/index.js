@@ -3,6 +3,7 @@ content.id = 'content'
 import  makeHome  from './js/home.js';
 import makeContact from './js/contact.js';
 import makeMenu from './js/menu.js';
+import './style.css'
 
 
 import myImage from './img/cave.jpg'
@@ -33,9 +34,10 @@ const handleButton = (x) => {
     }
 }
 
-//removes all but the header
+//removes all but the header and footer
 const removeContent = () => {
     const header = document.querySelector('.header')
+    const footer = document.querySelector('.footer')
     while (content.lastChild !== header){
         content.removeChild(content.lastChild);
     }
@@ -56,36 +58,43 @@ const makeDiv = (title, inside, content) => {
 //initializes the page, creates the header and preloads the 
 //home page
 const init = (() => { 
-    const header = document.createElement('div')
-    header.classList.add('header')
+    const header = document.createElement('div');
+    header.classList.add('header');
 
-    const title = document.createElement('div')
-    title.classList.add('title')
-    title.textContent = 'Welcome to the Den'
+    const title = document.createElement('div');
+    title.classList.add('title');
+    title.textContent = 'Welcome to the Den';
 
-    const mainImg = new Image()
-    mainImg.src = myImage
+    const mainImg = new Image();
+    mainImg.src = myImage;
 
-    const tabs = document.createElement('div')
-    tabs.classList.add('tabs')
+    const tabs = document.createElement('div');
+    tabs.classList.add('tabs');
 
     const home = document.createElement('button');
     home.textContent = 'Home';
-    home.classList.add('current')
+    home.classList.add('current');
+
     const menu = document.createElement('button');
     menu.textContent = 'Our menu';
+
     const contact = document.createElement('button');
     contact.textContent = 'Contact us !';
+
+    const footer = document.createElement('div');
+    footer.textContent = 'By Tom Dangleterre';
+    footer.classList.add('footer');
 
     [home, menu,contact].forEach(x => handleButton(x));
 
     [home,menu,contact].forEach(x => tabs.appendChild(x));
 
-    [mainImg, title, tabs].forEach(x => header.appendChild(x))
-    document.body.appendChild(content)
+    [mainImg, title, tabs].forEach(x => header.appendChild(x));
+    document.body.appendChild(content);
 
-    content.appendChild(header)
-    makeHome(content)
+    content.appendChild(header);
+    makeHome(content);
+    document.body.appendChild(footer);
 })()
 
 export {removeContent, makeDiv}

@@ -21,7 +21,7 @@ const generateImgContent = () => {
         imgArray[k].insertBefore(document.createElement('p'),imgArray[k].firstChild)
     }
     imgArray[0].firstChild.textContent = 'The all-time classic : a bunch of dirty leaves, the all mighty ancestor of salad'
-    imgArray[1].firstChild.textContent = 'Craving for a nice soup ? We got you with this thick and filling mud soup coming straight from our own reservoir !'
+    imgArray[1].firstChild.textContent = 'Craving for a nice desert ? We got you with this thick and filling mud creme coming straight from our own reservoir !'
     imgArray[2].firstChild.textContent = 'Enjoy nature at it\'s freshest with this assortment of hand-picked mushrooms we found in our cave !'
     imgArray[3].firstChild.textContent = 'If you want the crunchy stuff, we can also serve a bunch of sticks, origin depending on season !'
     imgArray[4].firstChild.textContent = 'Probably our heaviest meal, for the ones who dare to eat this much, our famous Pile Of Rocks ! If you finish it you get a free drink !'
@@ -31,9 +31,9 @@ const generateImgContent = () => {
 }
 
 const makeSectionTitle = (title) => {
-    div = document.createElement('div') 
-    div.classlist.add('section-title')
-    h1 = document.createElement('h1')
+    const div = document.createElement('div') 
+    div.classList.add('section-title')
+    const h1 = document.createElement('h1')
     h1.textContent = title
     div.appendChild(h1)
     return div
@@ -42,10 +42,25 @@ const makeSectionTitle = (title) => {
 const makeMenu = (content) =>{
     removeContent()
     const imgArray = generateImgContent()
-    starter = makeSectionTitle('Our starters')
-    mainCourse = makeSectionTitle('Our main courses')
-    deserts = makeSectionTitle('Our deserts')
-    drinks = makeSectionTitle('A drink ?')
+    const starter = makeSectionTitle('Our starters')
+    const mainCourse = makeSectionTitle('Our main courses')
+    const deserts = makeSectionTitle('Our deserts')
+    const drinks = makeSectionTitle('A drink ?')
+    console.log(imgArray)
+    content.appendChild(starter)
+    makeDiv('Bunch\'o leaves', imgArray[0], content)
+    makeDiv('Bunch\'o sticks', imgArray[3], content)
+
+    content.appendChild(mainCourse)
+    makeDiv('Bunch\'o mushroom', imgArray[2], content)
+    makeDiv('Bunc\'o rocks', imgArray[4], content)
+
+    content.appendChild(deserts)
+    makeDiv('Bunch\'o mud', imgArray[1], content)
+
+    content.appendChild(drinks)
+    makeDiv('Fresh pond water', imgArray[5], content)
+    makeDiv('Banana Moonshine', imgArray[6], content)
 }
 
 
